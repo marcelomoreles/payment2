@@ -1,0 +1,26 @@
+{
+  "name": "payment2",
+  "version": "0.0.1",
+  "description": "Payment integration with pagseguro.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/lukaswilkeer/node-payment2.git"
+  },
+  "keywords": [
+    "payment",
+    "integration",
+    "pagseguro",
+    "credit",
+    "card"
+  ],
+  "author": "Lukas Wilkeer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/lukaswilkeer/node-payment2/issues"
+  },
+  "homepage": "https://gitlab.com/lukaswilkeer/node-payment2#README"
+}

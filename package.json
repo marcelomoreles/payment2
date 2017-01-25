@@ -4,7 +4,7 @@
   "description": "Payment integration with pagseguro.",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "mocha tests --recursive"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,14 @@
   "bugs": {
     "url": "https://gitlab.com/lukaswilkeer/node-payment2/issues"
   },
-  "homepage": "https://gitlab.com/lukaswilkeer/node-payment2#README"
+  "homepage": "https://gitlab.com/lukaswilkeer/node-payment2#README",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.2.0",
+    "sinon": "^1.17.7"
+  },
+  "dependencies": {
+    "axios": "^0.15.3"
+  }
 }

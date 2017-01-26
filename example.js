@@ -2,7 +2,7 @@ const payment = require('payment2')
 
 const pay = () => {
 	const settings = {
-		email: 'lukasc4l@gmail.com'
+    email: 'lukasc4l@gmail.com'
 		, token: 'AOSDIAU8979234'
 		, ambient: 'production'
 		, logging: false

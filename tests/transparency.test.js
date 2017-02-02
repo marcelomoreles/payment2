@@ -27,7 +27,7 @@ describe('Initializing payment session on pagseguro', () => {
   })
 
   it('Should have validation on ambient settings', (done) => {
-  	cosnt setAmbient = (ambient) => transparency.settigs.ambient = 'custom'
+  	const setAmbient = (ambient) => transparency.settigs.ambient = 'custom'
   	expect(setAmbient).to.throw(err)
   })
 

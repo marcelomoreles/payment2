@@ -9,26 +9,38 @@ const should = chai.should
 chai.use(http)
 
 describe('Initializing payment session on pagseguro', () => {
-  it('Should recive email and token on an object', (done) => {
-  	transparency.credentials.email = 'lukaswilkeer@yahoo.com.br'
-  	transparency.credentials.token = 'ASA98S98AD7WGGD'
+  it('Should recive settings on a object', (done) => {
+    const settings = {
+        email: 'lukaswilkeer@yahoo.com.br'
+      , token: 'ASA98S98AD7WGGD'
+      , env: 'sandbox'
+    }
 
-  	expect(transparency.credentials).to.be.a('object')
-    expect(transparency.credentials).to.have.property('email')
-    expect(transparency.credentials).to.have.property('token')
-   done()
+    transparency.initialize(settings)
+
+  	expect(transparency.settings).to.be.a('object')
+    expect(transparency.settings).to.have.property('email')
+    expect(transparency.settings.email).to.exist
+    expect(transparency.settings).to.have.property('token')
+    expect(transparency.settings.token).to.exist
+    done()
   })
 
   it('Should have an environment variable, sandbox or production', (done) => {
-  	transparency.settings.ambient = 'sandbox'
-  	transparency.settings.logging = false
-
-  	expect(transparency.settings.ambient).to.be.a('string')
+    expect(transparency.settings.env).to.be.a('string')
+    expect(transparency.settings.env).to.be.eql('sandbox')
+    done()
   })
 
-  it('Should have validation on ambient settings', (done) => {
-  	const setAmbient = (ambient) => transparency.settigs.ambient = 'custom'
-  	expect(setAmbient).to.throw(err)
+  it('Should have validation on env settings', (done) => {
+    const settings = {
+        email: 'lukaswilkeer@yahoo.com.br'
+      , token: 'ASA98S98AD7WGGD'
+      , env: 'failed'
+    }
+    const setAmbient = (settings) => transparency.initialize(settings)
+    expect(setAmbient).to.throw(Error)
+    done()
   })
 
   it('Shoud return 200 OK with an session ID', (done) => {
